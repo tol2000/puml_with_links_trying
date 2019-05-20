@@ -1,0 +1,29 @@
+= Обобщённый пример
+
+document_3_xml - это ссылка на соответствующий svg-файл.
+Но она не кликабельна, т.к. гитхаб и гитлаб рнедерят даже SVG, видимо, в растровом формате.
+
+Пока я вижу только один выход: +
+главную диаграмму грузить на локальный компьютер и там открывать в браузере как SVG. +
+Тогда браузер отображает ссылки кликабельными.
+
+== Диаграмма
+
+[plantuml, format="svg"]
+----
+@startuml diagram
+
+skinparam defaultTextAlignment center
+!pragma useVerticalIf on
+scale 1.5
+
+start
+floating note right: Procedure DOCUMENT
+IF (**if**\n....\ni=1) THEN (yes)
+	[[document_3_xml.svg]]#APPLICATION:**document_3_xml**|
+ENDIF
+
+stop
+
+@enduml
+----
